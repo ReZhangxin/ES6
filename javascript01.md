@@ -1,3 +1,4 @@
+##Html、Css
 
 ### 标签kbd
 > 定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。
@@ -28,6 +29,20 @@
 
 4、`align-self`
 > `align-self` 可以单独设置每个 flex item(flex项) 的对齐方式。
+
+## ES6
+
+### 使用 data-属性来嵌入自定义数据
+> 页面里通过data-key将页面展示的内容和audio关联起来。
+> 语法 `<element data-*="somevalue">`
+ ```html
+ <div data-key="76" class="key"><kbd>L</kbd><span class="sound">tink</span></div>
+ 
+ <audio data-key="76" src="sounds/tink.wav"></audio>
+    
+  ```
+  
+
 
 
 
