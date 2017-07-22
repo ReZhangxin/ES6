@@ -41,7 +41,37 @@
  <audio data-key="76" src="sounds/tink.wav"></audio>
     
   ```
+  ### forEach
+  > forEach是Array新方法中最基本的一个，就是遍历，循环。
+  > forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。
+  ```js
+  [].forEach(function(value,index,array){
+       // doSomthing
+  });
+  ```
+  ### Array.from()
+  > Array.from() 方法从一个类似数组或可迭代的对象中创建一个新的数组实例。
+  ```js
+  const bar = ["a", "b", "c"];
+  Array.from(bar);
+  // ["a", "b", "c"]
+
+  Array.from('foo');
+  // ["f", "o", "o"]
   
+  const keys = Array.from(document.querySelectorAll('.key'));//选取所有class="key"的节点添加到keys的数组中
+  
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));//keys循环遍历所有key并且监听是否有过渡效果
+  
+```
+### event.target
+> 引发事件的DOM元素。
+
+this和event.target的区别
+> js中事件是会冒泡的，所以this是可以变化的，但event.target不会变化，它永远是**直接接受事件的目标DOM元素**;
+
+this和event.target的相同点
+> this和event.target都是dom对象，如果要使用jquey中的方法可以将他们转换为jquery对象：$(this)和$(event.target);
 
 
 
