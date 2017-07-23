@@ -43,7 +43,10 @@
   ```
   ### forEach
   > forEach是Array新方法中最基本的一个，就是遍历，循环。
-  > forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身。
+  > forEach方法中的function回调支持3个参数,<br>
+  > 第1个是遍历的数组内容;<br>
+  > 第2个是对应的数组索引;<br>
+  > 第3个是数组本身。
   ```js
   [].forEach(function(value,index,array){
        // doSomthing
