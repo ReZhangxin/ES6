@@ -64,6 +64,35 @@
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));//keys循环遍历所有key并且监听是否有过渡效果
   
 ```
+### 事件流
+> 事件分为三个阶段：捕获阶段、目标阶段和冒泡阶段。
+捕获阶段 
+> 事件从文档的根节点流向目标对象节点。 window ->document -> html ->body -> div
+目标阶段
+> 当事件到达目标节点，事件就进入了目标阶段。div-->click 
+冒泡阶段
+> 事件在目标元素上触发后，并不在这个元素上终止。它会随着DOM树一层层向上冒泡，回溯到根节点。<br>
+>  div -> body -> html -> document -> window
+
+##W3C模型
+> W3C模型是将两者进行中和，在W3C模型中，任何事件发生时，先从顶层开始进行事件捕获，直到事件触发到达了事件源元素。然后，再从事件源往上进行事件冒泡，直到到达document。
+> 我们可以自己选择绑定事件时采用事件捕获还是事件冒泡，方法就是绑定事件时通过addEventListener函数，它有三个参数，第三个参数若是true，则表示采用事件捕获，若是false，则表示采用事件冒泡。<br>
+> **默认是false**
+
+> 在W3c中，用`stopPropagation()`方法 阻止事件传播 IE中则是 `cancelBubble = true;`
+
+> 在W3c中，用`preventDefault()`方法 阻止事件默认行为 IE中则是 `window.event.returnValue = false;`
+
+
+### addEventListener() 
+> 方法用于向指定元素添加事件句柄。<br>
+> 使用 `removeEventListener()` 方法来移除 `addEventListener() `方法添加的事件句柄。
+`element.addEventListener(event, function, useCapture)`
+> 可选。布尔值，指定事件是否在捕获或冒泡阶段执行。<br>
+> true - 事件句柄在捕获阶段执行<br>
+> false- false- 默认。事件句柄在冒泡阶段执行
+
+
 ### event.target
 > 引发事件的DOM元素。
 
