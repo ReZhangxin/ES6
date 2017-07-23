@@ -15,19 +15,19 @@
 ### [flex布局](http://www.css88.com/archives/7236#more-7236)
 > 主要属性 垂直居中对齐 ```align-items:center;   justify-content:center;```
 
-1、`Flex-direction` 
+1、Flex-direction
 > 默认从左到右 `flex-direction:column`从上到下
 
-2、`justify-content `
+2、justify-content 
 > `flex-start` `flex-endcenter` `space-between`  `space-around` 
 
 `justify-content` 决定` flex item(flex项)`沿主轴的对齐方式，`flex-direction` 决定了主轴的方向。
 
-3、`align-items`
+3、align-items
 > `flex-start`  `flex-end`  `center`  `stretch`  `baseline`<br>
 > 定义了 flex item(flex项) 在交叉轴(cross axis)上的对齐方式。
 
-4、`align-self`
+4、align-self
 > `align-self` 可以单独设置每个 flex item(flex项) 的对齐方式。
 
 ## ES6
@@ -47,14 +47,17 @@
   > 第1个是遍历的数组内容;<br>
   > 第2个是对应的数组索引;<br>
   > 第3个是数组本身。
-  ```js
+  
+```js
   [].forEach(function(value,index,array){
        // doSomthing
   });
-  ```
+```
+  
   ### Array.from()
   > Array.from() 方法从一个类似数组或可迭代的对象中创建一个新的数组实例。
-  ```js
+  
+```js
   const bar = ["a", "b", "c"];
   Array.from(bar);
   // ["a", "b", "c"]
@@ -65,8 +68,8 @@
   const keys = Array.from(document.querySelectorAll('.key'));//选取所有class="key"的节点添加到keys的数组中
   
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));//keys循环遍历所有key并且监听是否有过渡效果
-  
 ```
+
 ### 事件流
 > 事件分为三个阶段：捕获阶段、目标阶段和冒泡阶段。
 捕获阶段 
