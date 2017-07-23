@@ -109,6 +109,12 @@ this和event.target的区别
 this和event.target的相同点
 > this和event.target都是dom对象，如果要使用jquey中的方法可以将他们转换为jquery对象：$(this)和$(event.target);
 
-
+### transitionend 
+> 事件在 CSS 完成过渡后触发。
+object.addEventListener("transitionend", fn);   
+> * onwheel	该事件在鼠标滚轮在元素上下滚动时触发
+> * animationend	该事件在 CSS 动画结束播放时触发	 
+> * animationiteration	该事件在 CSS 动画重复播放时触发
+> * animationstart	该事件在 CSS 动画开始播放时触发
 
 
