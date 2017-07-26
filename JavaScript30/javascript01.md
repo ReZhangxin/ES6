@@ -2,6 +2,7 @@
 
 ### 标签kbd
 > 定义键盘文本。它表示文本是从键盘上键入的。它经常用在与计算机相关的文档或手册中。
+
 `<kbd> qwer <\kbd>`
 
 ### min-height: 100vh; 
@@ -35,12 +36,14 @@
 ### 使用 data-属性来嵌入自定义数据
 > 页面里通过data-key将页面展示的内容和audio关联起来。
 > 语法 `<element data-*="somevalue">`
+ 
  ```html
  <div data-key="76" class="key"><kbd>L</kbd><span class="sound">tink</span></div>
  
- <audio data-key="76" src="sounds/tink.wav"></audio>
-    
+ <audio data-key="76" src="sounds/tink.wav"></audio>   
   ```
+
+
   ### forEach
   > forEach是Array新方法中最基本的一个，就是遍历，循环。
   > forEach方法中的function回调支持3个参数,<br>
