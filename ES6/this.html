@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+
+
+<script>
+    //this 相关概念
+    // 调用点:函数在代码中被调用的位置(不是被声明的位置)
+    // 调用栈(call stack):使我们到达当前执行位置而被调用的所有方法的堆栈,调用点就位于当前执行中的函数 "之前"的调用
+    function baz(){
+        //调用栈是:`baz`
+        //调用点是 global scope(全局作用域)
+        console.log("baz");
+        bar();// `bar`的调用点
+    }
+    function bar(){
+        //调用栈是:`baz`->`bar`
+        //调用点: `baz`
+        console.log("bar");
+        foo();//foo的调用栈
+    }
+    function foo(){
+        //调用栈是:`baz`->`bar`->`foo`
+        //调用点:`bar`
+        console.log("foo");
+    }
+    baz();//`baz`的调用点
+//四种this指向规则 默认绑定 隐含绑定 明确绑定 new绑定
+
+//1. 默认绑定 Default Binding
+//       独立函数调用。没有其他规则适用时的默认规则
+       function foo(){alert(this.a);}
+       var a = 2; foo();//2
+
+       foo();
+        //是被一个直白的，毫无修饰的函数引用调用的.没有其他规则适用。所以选默认绑定
+//       在 "use strict"下默认绑定不合法 this会被设置为undefined.
+
+//2. 隐含绑定 Implicit Binding
+//       调用点是否有一个环境对象，也称为拥有者或容器对象
+       function foo(){
+           console.log(this.a);
+       }
+       var obj = {
+           a:2,
+           foo:foo
+       };
+       obj.foo();//2
+       foo()
+        // 被声明后作为引用属性添加到obj上 无论foo()是否一开始就在obj上被声明,还是
+        // 后来作为引用添加，这个函数都不被obj所真正“拥有”或者“包含”。
+
+
+
+
+</script>
+</body>
+</html>
