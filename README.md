@@ -1,5 +1,4 @@
 # ES6
-Some notes about ES6
 
 [第一章 块级作用域绑定]()
 
