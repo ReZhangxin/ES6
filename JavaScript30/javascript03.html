@@ -7,7 +7,7 @@
         :root{
             --base:aqua;
             --spacing:10px;
-            --blur:10px;
+            --blur:0px;
         }
         img{
             width:600px;height:400px;padding: var(--spacing);
@@ -33,7 +33,7 @@
         <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
         <label for="blur">Blur:</label>
-        <input id="blur" type="range" name="blur" min="10" max="25" value="10" data-sizing="px">
+        <input id="blur" type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
 
         <label for="base">Base Color:</label>
         <input id="base" type="color" name="base" value="aqua">
@@ -42,11 +42,11 @@
 
     <div class="result">
         <div class="showText">{spacing:<label id="label_spacing">aqua</label>}</div>
-        <div class="showText">{blur:<label id="label_blur">10px</label>}</div>
+        <div class="showText">{blur:<label id="label_blur">0px</label>}</div>
         <div class="showText">{base:<label id="label_base">10px</label>}</div>
     </div>
 
-        <img src="http://f.hiphotos.baidu.com/lvpics/h=800/sign=b346032cbe389b5027ffed52b534e5f1/960a304e251f95ca545f8b84ce177f3e6709525d.jpg" alt="">
+        <img src="img/dog.jpg" alt="">
 
 
 </div>
@@ -61,6 +61,14 @@
 
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
     inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));  
+
+
+    const sqrt = function(x,y){
+        console.log(Math.sqrt(x*x+y*y));
+    }
+    sqrt(1,1);
+
+   
  </script>
 
 </body>
