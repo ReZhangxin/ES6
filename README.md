@@ -1,6 +1,6 @@
 # ES6
 
-[第一章 块级作用域绑定]()
+[第一章 块级作用域绑定](https://github.com/ReZhangxin/ES6/blob/master/ES6/%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%BB%91%E5%AE%9A.md)
 
 [第二章 字符串和正则表达式]()
 
