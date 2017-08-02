@@ -209,6 +209,16 @@ arr.slice(begin)     //从第begin开始提取原数组中的元素 slice(-2)�
 arr.slice(begin,end) //提取从begin到end(不包括end)中所有元素
 
 //slice不修改原始数组，只会浅复制原始数组中元素的一个新数组。
+// * 如果该元素是个对象引用（不是实际的对象）slice会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。
+//   如果被引用的对象发生改变，则新的还有原来的数组中的这个元素也会发生改变。
+// * 如果该元素是字符串，数字，布尔值，slice会拷贝这些值到新的数组里。在别的数组修改这些值不会影响另一个
+
+let hero ={name:'zed',age:'22',gayF:'Shen'}
+let lol = [hero,'lpl','lck','we','omg']
+let nLol =lol.slice(0,3);
+hero.name = '劫';
 
 ```
 ![slice](http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png)
+
+![slice](http://otxurl2qj.bkt.clouddn.com/1501658504%281%29.png)
