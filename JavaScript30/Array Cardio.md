@@ -1,7 +1,7 @@
 ## Array Cardio
 
 ### 主要目的
-> 熟悉Array的一些方法 `filter` `map` `sort` `reduce`
+> 熟悉Array的一些方法 `filter` `map` `sort` `reduce` `some` `every` `find`
 
 ## 1.filter
 > 过滤操作 `filter()`方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素
@@ -72,7 +72,7 @@ console.table(hero);
 ```
 ![info](http://otxurl2qj.bkt.clouddn.com/1501476140%281%29.png)
 
-## reduce
+## 4.reduce
 > reduce()方法对累加器和数组中的每个元素应用一个函数，将其减少为单个值。
 
 ```js
@@ -101,7 +101,7 @@ const people = [
 ];
 ```
 
-## some
+## 5.some
 > some()方法测试数组中的某些元素是否通过该提供的函数所进行的测试。
 
 ```js
@@ -122,7 +122,7 @@ console.log(isAdult);//true
 
 ```
 
-## every
+## 6.every
 > every()方法测试数组的每一个元素是否全部都通过了函数的测试
 
 ```js
@@ -141,7 +141,7 @@ const isAdult = people.every(person => (new Date().getFullYear() -person.year) >
 console.log(isAdult);//false
 ```
 
-## find
+## 7.find
 > find()方法返回数组中满足提供的测试函数的第一个元素的值。没有的话返回undefined。
 
 ```js
@@ -154,5 +154,18 @@ const old = ele => ele>=100;
 //includes() 方法用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false。
 //const b = [1, 2, 3]; b.includes(2); // true  b.includes(4); // false
 
+const findID =comments.find(comment => comment.id === 888);
+console.log(findID);//undefined
 
+const hero =[
+     {name:"德玛",age:21},
+     {name:"卡特",age:22},
+     {name:"男刀",age:24},
+     {name:"女警",age:18}
+];
+const findDema = dema => dema.name === "德玛";
+console.log(hero.find(findDema));
 ```
+![find](http://otxurl2qj.bkt.clouddn.com/arr.png)
+
+
