@@ -168,4 +168,30 @@ console.log(hero.find(findDema));
 ```
 ![find](http://otxurl2qj.bkt.clouddn.com/arr.png)
 
+## 8.splice
+> splice()方法通过删除现有元素或添加新元素来更改一个数组的内容。
+
+```js
+arr.splice(start)
+arr.splice(start,deleteCount)
+arr.splice(start,deleteCount,item1,item2,...)
+
+let hero =['德玛','卡特','劫','女警','ez'];
+let removed = hero.splice(2,0,'光辉');
+//removed: [],没有元素被删除
+//hero: ['德玛','卡特','光辉','劫','女警','ez']
+
+removed = hero.splice(3,1);
+//removed: ['劫']
+//hero: ['德玛','卡特','光辉','女警','ez']
+
+removed = hero.splice(2, 1, '小炮');
+//removed: ['光辉']
+//hero: ['德玛','卡特','小炮','女警','ez']
+
+removed =hero.splice(0,2,'Ashe','Yi','Teemo','zed');
+//removed:['德玛','卡特']
+//hero: ['Ashe','Yi', 'Teemo', 'zed', '小炮', '女警', 'ez']
+```
+![splice](http://otxurl2qj.bkt.clouddn.com/1501645896%281%29.png)
 
