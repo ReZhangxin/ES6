@@ -85,3 +85,74 @@ const totalYears = inventors.reduce((total,inventor) => {
      return total + (inventor.passed - inventor.year);
 },0);
 ```
+
+```js
+const people = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+];const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+];
+```
+
+## some
+> some()方法测试数组中的某些元素是否通过该提供的函数所进行的测试。
+
+```js
+arr.some(callback[, thisArg]);
+//  callback  用来测试每个元素的函数
+//  thisArg   执行callback时使用的this值
+
+//some为数组中每一个元素执行一次callback函数直到满足该条件返回true否则返回false
+//callback被调用时有三个参数：元素值ele 元素索引index 被遍历的数组arr
+
+const youth =(ele,index,arr) => ele>=16 && ele<=28;
+const age =[1,10,2,15,38,11].some(youth); //age is false
+const age2 =[11,16,19,99]//age2 is true
+
+//是否至少有一人年满18周岁？
+const isAdult = people.some(person => (new Date().getFullYear() -person.year) >= 18);
+console.log(isAdult);//true
+
+```
+
+## every
+> every()方法测试数组的每一个元素是否全部都通过了函数的测试
+
+```js
+arr.every(callback[, thisArg]);
+//  callback  用来测试每个元素的函数
+//  thisArg   执行callback时使用的this值
+
+//every方法会对每一个元素执行函数，直到callback遇到一个返回false的元素就返回false否则就是true
+//callback被调用时有三个参数：元素值ele 元素索引index 被遍历的数组arr
+
+//如果为 every 提供一个 thisArg 参数，在该参数为调用 callback 时的 this 值。
+//如果省略该参数，则 callback 被调用时的 this 值，在非严格模式下为全局对象，在严格模式下传入 undefined。
+
+是否每一个人都年满18周岁？
+const isAdult = people.every(person => (new Date().getFullYear() -person.year) >= 18);
+console.log(isAdult);//false
+```
+
+## find
+> find()方法返回数组中满足提供的测试函数的第一个元素的值。没有的话返回undefined。
+
+```js
+const old = ele => ele>=100;
+[12,99,6,118,55,999].find(old);//118
+[12,99,6,118,55,999].findIndex(old);//3
+
+//indexOf()方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
+//const a = [2, 9, 7, 8, 9];  a.indexOf(2); // 0  a.indexOf(6); // -1
+//includes() 方法用来判断一个数组是否包含一个指定的值，如果是，酌情返回 true或 false。
+//const b = [1, 2, 3]; b.includes(2); // true  b.includes(4); // false
+
+
+```
