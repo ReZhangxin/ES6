@@ -208,6 +208,10 @@ arr.slice()          //索引从0开始提取原数组中的元素
 arr.slice(begin)     //从第begin开始提取原数组中的元素 slice(-2)表示从倒数第二个元素到最后一个(包含最后一个)。
 arr.slice(begin,end) //提取从begin到end(不包括end)中所有元素
 
+```
+![slice](http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png)
+
+```js
 //slice不修改原始数组，只会浅复制原始数组中元素的一个新数组。
 // * 如果该元素是个对象引用（不是实际的对象）slice会拷贝这个对象引用到新的数组里。两个对象引用都引用了同一个对象。
 //   如果被引用的对象发生改变，则新的还有原来的数组中的这个元素也会发生改变。
@@ -217,8 +221,16 @@ let hero ={name:'zed',age:'22',gayF:'Shen'}
 let lol = [hero,'lpl','lck','we','omg']
 let nLol =lol.slice(0,3);
 hero.name = '劫';
-
 ```
-![slice](http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png)
 
 ![slice](http://otxurl2qj.bkt.clouddn.com/1501658504%281%29.png)
+
+```js
+//类数组（Array-like）
+slice方法可以用来将一个类数组转换成一个数组。如下面代码中arguments就是一个类数组对象。
+function list() {
+  return Array.prototype.slice.call(arguments);//可以用[].slice.call(arguments)代替
+}
+var list1 = list(1, 2, 3);//list1:[1,2,3]
+
+```
