@@ -234,3 +234,28 @@ function list() {
 var list1 = list(1, 2, 3);//list1:[1,2,3]
 
 ```
+
+## 最后说一下简单的一些方法
+### 创建一个数组
+
+```js
+let hero = ['zed','Ashe','ez']
+```
+
+添加元素到数组末尾
+
+`const nHero = hero.push('Teemo');`
+
+删除数组末尾元素
+
+`const last = hero.pop()`
+
+删除数组最前面（头部）的元素
+
+`const first = hero.shift()`
+
+找到某个元素在数组中的索引
+
+`const index =hero.index('ez')`
+
+
