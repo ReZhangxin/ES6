@@ -1,7 +1,7 @@
 ## Array Cardio
 
 ### 主要目的
-> 熟悉Array的一些方法 `filter` `map` `sort` `reduce` `some` `every` `find`
+> 熟悉Array的一些方法 `filter` `map` `sort` `reduce` `some` `every` `find` `splice`
 
 ## 1.filter
 > 过滤操作 `filter()`方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素
@@ -195,3 +195,20 @@ removed =hero.splice(0,2,'Ashe','Yi','Teemo','zed');
 ```
 ![splice](http://otxurl2qj.bkt.clouddn.com/1501645896%281%29.png)
 
+## slice
+> slice() 方法返回一个从开始到结束(不包括结束)选择的数组的一部分**浅拷贝**到一个新数组对象。原始数组不会被修改。
+
+```js
+let a = ['Ashe','Yi','Teemo','zed','ez']
+let sliced = a.slice(1,3);
+a:['Ashe','Yi','Teemo','zed','ez']
+sliced:['Yi','Teemo']
+
+arr.slice()          //索引从0开始提取原数组中的元素
+arr.slice(begin)     //从第begin开始提取原数组中的元素 slice(-2)表示从倒数第二个元素到最后一个(包含最后一个)。
+arr.slice(begin,end) //提取从begin到end(不包括end)中所有元素
+
+//slice不修改原始数组，只会浅复制原始数组中元素的一个新数组。
+
+```
+![slice](http://otxurl2qj.bkt.clouddn.com/1501656946%281%29.png)
