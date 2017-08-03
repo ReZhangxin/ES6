@@ -26,26 +26,26 @@ const y = window.scrollY;     //y 是文档从顶部开始滚动过的像素值�
 
 ## Day13 - 图片随屏幕滚动而滑入滑出的效果
 ```js
-//1.获取所有需要参与动画的图片
-const sImgs = document.querySelectorAll(element);
-function slide(){
-     //循环遍历每一个图片都要执行动画
-     sImgs.forEach( simg =>{
-          // 滚轮滑动到图片显示的一半 
-          const slideAt = window.innerHeight + window.scrolly - simg.height/2;
-          // 图片底部距文档顶部的距离
-          const imgBottom = simg.offsetTop + simg.height;
-          // 图片是否已经显示了一半
-          const isHalfShow = slideAt > simg.ofsetTop;
-          // 图片是否已经被完全滚动出去
-          const isOut = window.scrollY < imgBottom
-          if (isHalfShow && isOut) {
-               simg.classList.add('active');
-           } else {
-               simg.classList.remove('active');
-           }
-     });     
-}
-//监听滚动
-window.addEventListener('scroll',slide)
+// 1.获取所有需要参与动画的图片
+	const sImgs = document.querySelectorAll('.slide-in');
+	function slide(){
+	     //循环遍历每一个图片都要执行动画
+	     sImgs.forEach( simg =>{
+	          // 滚轮滑动到图片显示的一半 
+	          const slideAt = window.innerHeight + window.scrollY - simg.height/2;
+	          // 图片底部距文档顶部的距离
+	          const imgBottom = simg.offsetTop + simg.height;
+	          // 图片是否已经显示了一半
+	          const isHalfShow = slideAt > simg.offsetTop;
+	          // 图片是否已经被完全滚动出去
+	          const isOut = window.scrollY < imgBottom;
+	          if (isHalfShow && isOut) {
+	               simg.classList.add('active');
+	           } else {
+	               simg.classList.remove('active');
+	           }
+	     });     
+	}
+	//监听滚动
+	window.addEventListener('scroll',slide);
 ```
