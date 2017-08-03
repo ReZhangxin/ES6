@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scroll</title>
+	<style>
+		html{box-sizing: border-box;background-color: teal;font-family: 'Comic Sans MS','微软雅黑';font-size: 20px;font-weight:200;}
+		body{margin:0;}
+		*,*before,*after{box-sizing: inherit;}
+		h1{margin-top:0;}
+		.site-wrap{
+			max-width:700px;margin:100px auto;background-color: white;padding:40px;
+		}
+		img{max-width: 350px;}
+		.align-left{float: left;margin-right:20px;}
+		.align-right{float:right;margin-left:20px;}
+		.slide-in{opacity: 0;transition: all .5s;}
+		.align-left.slide-in{transform: translateX(-30%) scale(.95);}
+		.align-right.slide-in{transform: translateX(30%) scale(.95);}
+		.slide-in.active{opacity: 1;transform: translateX(0%) scale(1);}
+
+	</style>
+</head>
+<body>
+	 <div class="site-wrap">
+
+    		<h1>集中式vs分布式</h1>
+
+    		<p>Linus一直痛恨的CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？</p>
+    		<p>先说集中式版本控制系统，版本库是集中存放在中央服务器的，而干活的时候，用的都是自己的电脑，所以要先从中央服务器取得最新的版本，然后开始干活，干完活了，再把自己的活推送给中央服务器。中央服务器就好比是一个图书馆，你要改一本书，必须先从图书馆借出来，然后回到家自己改，改完了，再放回图书馆。</p>
+    		<p>集中式版本控制系统最大的毛病就是必须联网才能工作，如果在局域网内还好，带宽够大，速度够快，可如果在互联网上，遇到网速慢的话，可能提交一个10M的文件就需要5分钟，这还不得把人给憋死啊。</p>
+
+ 		<img src="https://www.liaoxuefeng.com/files/attachments/001384860735706fd4c70aa2ce24b45a8ade85109b0222b000/0" class="align-left slide-in">
+
+    		<p>那分布式版本控制系统与集中式版本控制系统有何不同呢？首先，分布式版本控制系统根本没有“中央服务器”，每个人的电脑上都是一个完整的版本库，这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上。既然每个人电脑上都有一个完整的版本库，那多个人如何协作呢？比方说你在自己电脑上改了文件A，你的同事也在他的电脑上改了文件A，这时，你们俩之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。</p>
+    		<p>和集中式版本控制系统相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，某一个人的电脑坏掉了不要紧，随便从其他人那里复制一个就可以了。而集中式版本控制系统的中央服务器要是出了问题，所有人都没法干活了。</p>
+    		<p>在实际使用分布式版本控制系统的时候，其实很少在两人之间的电脑上推送版本库的修改，因为可能你们俩不在一个局域网内，两台电脑互相访问不了，也可能今天你的同事病了，他的电脑压根没有开机。因此，分布式版本控制系统通常也有一台充当“中央服务器”的电脑，但这个服务器的作用仅仅是用来方便“交换”大家的修改，没有它大家也一样干活，只是交换修改不方便而已。</p>
+
+   		<img src="https://www.liaoxuefeng.com/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0" class="align-right slide-in">
+
+    		<p>当然，Git的优势不单是不必联网这么简单，后面我们还会看到Git极其强大的分支管理，把SVN等远远抛在了后面。CVS作为最早的开源而且免费的集中式版本控制系统，直到现在还有不少人在用。由于CVS自身设计的问题，会造成提交文件不完整，版本库莫名其妙损坏的情况。同样是开源而且免费的SVN修正了CVS的一些稳定性问题，是目前用得最多的集中式版本库控制系统。除了免费的外，还有收费的集中式版本控制系统，比如IBM的ClearCase（以前是Rational公司的，被IBM收购了），特点是安装比Windows还大，运行比蜗牛还慢，能用ClearCase的一般是世界500强，他们有个共同的特点是财大气粗，或者人傻钱多。</p>
+    		<p>微软自己也有一个集中式版本控制系统叫VSS，集成在Visual Studio中。由于其反人类的设计，连微软自己都不好意思用了。</p>
+
+    		<img src="http://unsplash.it/200/500" class="align-left slide-in">
+
+    		<p>分布式版本控制系统除了Git以及促使Git诞生的BitKeeper外，还有类似Git的Mercurial和Bazaar等。这些分布式版本控制系统各有特点，但最快、最简单也最流行的依然是Git！   数字货币与区块链。。。
+		最近几年，随着比特币的兴起并不断走高的价格，越来越多的投资者和机构开始对数字货币这一新兴概念产生了兴趣。由比特币创建并使用的区块链技术也获得了从创业公司到金融巨头的广泛关注和参与。
+
+		自08年诞生的第一种数字货币——比特币，从一万个币换一个披萨到一个币单价近两万，比特币8年暴涨百万倍，其背后的区块链技术更是被各大金融巨头竞相研究。
+		郎咸平教授称比特币是彻头彻尾的金融骗局，各种山寨虚拟币诈骗也层出不穷。比特币究竟是虚拟资产还是庞氏骗局？在全球范围爆发的勒索病毒，黑客为何索要比特币？人民日报发文称比特币成了“数字黄金”，央行更是早就设立了数字货币研究所，并表示正在推进中国自己的数字货币系统。
+
+		到底什么是数字货币？没有中心节点的数字货币却号称不可伪造，数字货币和区块链究竟是如何运行的？又会给未来的互联网金融以及其他行业带来哪些变化？和每个人息息相关的金融服务将来会运行在区块链之上吗？</p>
+
+		<img src="http://unsplash.it/200/200" class="align-right slide-in">
+
+		<p>马云说，对于新兴事物，绝大多数人第一看不见，第二看不起，第三看不懂，第四来不及。如果你对比特币等数字货币处于“看不懂”阶段，不想等到“来不及”阶段，作为国内首发的数字货币与区块链的视频教程，将为你深入浅出地介绍数字货币和区块链技术的运行原理，让你对挖矿、钱包、签名、密钥这些技术不再陌生。</p>
+		<p>构造方法是创建和初始化使用类创建的一个对象的一种特殊方法。一个 class 中只能有一个指定的 ”constructor“ （构造）方法。如果 class 定义的时候包含多个构造方法，程序将会抛出 SyntaxError 错误。
+
+		在构造方法中可以使用 super 关键字来调用父类的构造方法。
+
+		如果没有显式指定构造方法，则会添加默认的constructor方法。</p>
+
+   		<img src="http://images2015.cnblogs.com/blog/116165/201606/116165-20160630110328843-2101737128.png" class="align-right slide-in">
+
+    		<p>extends关键词被用在类声明或者类表达式上，以创建一个类是另一个类的子类。</p>
+    		<p>IE中：
+		document.body.clientWidth ==> BODY对象宽度
+		document.body.clientHeight ==> BODY对象高度
+		document.documentElement.clientWidth ==> 可见区域宽度
+		document.documentElement.clientHeight ==> 可见区域高度
+		FireFox中：
+		document.body.clientWidth ==> BODY对象宽度
+		document.body.clientHeight ==> BODY对象高度
+		document.documentElement.clientWidth ==> 可见区域宽度
+		document.documentElement.clientHeight ==> 可见区域高度
+		Opera中：
+		document.body.clientWidth ==> 可见区域宽度
+		document.body.clientHeight ==> 可见区域高度
+		document.documentElement.clientWidth ==> 页面对象宽度
+		document.documentElement.clientHeight ==> 页面对象高度
+
+ 		<img src="img/dog.jpg" width="300" class="align-right slide-in">
+
+		alert(document.body.clientWidth);  //网页可见区域宽(body)
+
+		alert(document.body.clientHeight); //网页可见区域高(body)
+
+		alert(document.body.offsetWidth);  //网页可见区域宽(body)，包括border、margin等
+
+		alert(document.body.offsetHeight);      //网页可见区域宽(body)，包括border、margin等
+
+		alert(document.body.scrollWidth);        //网页正文全文宽，包括有滚动条时的未见区域
+
+		alert(document.body.scrollHeight);       //网页正文全文高，包括有滚动条时的未见区域
+
+		alert(document.body.scrollTop);           //网页被卷去的Top(滚动条)
+
+		alert(document.body.scrollLeft);           //网页被卷去的Left(滚动条)
+
+		alert(window.screenTop);                     //浏览器距离Top
+
+		alert(window.screenLeft);                     //浏览器距离Left
+
+		alert(window.screen.height);                //屏幕分辨率的高
+
+		alert(window.screen.width);                 //屏幕分辨率的宽
+
+		alert(window.screen.availHeight);          //屏幕可用工作区的高
+
+		alert(window.screen.availWidth);           //屏幕可用工作区的宽
+
+		<img src="img/dog.jpg" class="align-left slide-in">
+
+		alert($(window).height());                           //浏览器当前窗口可视区域高度
+
+		alert($(document).height());                        //浏览器当前窗口文档的高度
+
+		alert($(document.body).height());                //浏览器当前窗口文档body的高度
+
+		alert($(document.body).outerHeight(true));  //浏览器当前窗口文档body的总高度 包括border padding margin
+
+		alert($(window).width());                            //浏览器当前窗口可视区域宽度
+
+		alert($(document).width());                        //浏览器当前窗口文档对象宽度
+
+		alert($(document.body).width());                //浏览器当前窗口文档body的宽度
+
+		alert($(document.body).outerWidth(true));  //浏览器当前窗口文档body的总宽度 包括border padding margin</p>
+	 </div>
+
+
+  <script>
+  	const sliderImages = document.querySelectorAll('.slide-in');
+  	function checkSlide(e){
+  		sliderImages.forEach(sliderImages =>{
+  			//滑动到图片显示的一半
+  			const slideAt =window.innerHeight + window.scrollY-sliderImages.height/2;
+  			//图片底部到文档顶部的距离
+  			const imageBottom = sliderImages.offsetTop + sliderImages.height;
+  			//图片是否显示了一半
+  			const isHalfShow = slideAt > sliderImages.offsetTop;
+  			//图片是否已经完全滚动出去
+  			const isNotScroll = window.scrollY < imageBottom;
+  			if(isHalfShow && isNotScroll){
+  				sliderImages.classList.add('active');
+  			}else{
+  				sliderImages.classList.remove('active');
+  			}
+  		});
+  	}
+  	window.addEventListener('scroll',checkSlide);
+  </script>
+</body>
+</html>
