@@ -1,7 +1,7 @@
 ## Array Cardio
 
 ### 主要目的
-> 熟悉Array的一些方法 `filter` `map` `sort` `reduce` `some` `every` `find` `splice` `slice`
+> 熟悉Array的一些方法 `filter` `map` `sort` `reduce` `some` `every` `find` `splice` `slice` `concat` 
 
 ## 1.filter
 > 过滤操作 `filter()`方法创建一个新数组，其包含通过所提供函数实现的测试的所有元素
@@ -232,6 +232,17 @@ function list() {
   return Array.prototype.slice.call(arguments);//可以用[].slice.call(arguments)代替
 }
 var list1 = list(1, 2, 3);//list1:[1,2,3]
+
+```
+
+## 10.concat
+> concat()方法返回一个新的数组
+
+```js
+
+const arr1 = ['a','b','c','d'];
+const arr2 =[1,2,3,4];
+const arr3=arr1.concat(arr2);//arr3:['a','b','c','d',1,2,3,4];
 
 ```
 
