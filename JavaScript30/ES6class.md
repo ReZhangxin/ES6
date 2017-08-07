@@ -55,5 +55,26 @@ constructor([arguments]){...}
 > * 在构造方法中可以使用 `super` 关键字来调用父类的构造方法。
 > * 如果没有显式指定构造方法，则会添加默认的`constructor`方法。
 
+`extends`
+> `extends`关键词被用在类声明或者类表达式上，以创建一个类是另一个类的子类。
 
+```js
+'use strict'
+
+class Polygon {
+     constructor(height,width){
+          this.name = 'Polygon';
+          this.height = height;
+          this.width = width;
+     }
+}
+
+class Square extends Polygon{
+     constructor(length){
+          super(length,length);
+          //在构造器使用的 super()，super()只能在构造器中使用，super函数一定要在this可以使用之前调用。
+          this.name = 'Square';
+     }
+}
+```
 
