@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LocalStorage</title>
+	<style>
+		html{
+			box-sizing: border-box;font-family: "Comic Sans MS";
+			background:  url("http://ouch71mj2.bkt.clouddn.com/books-min.jpg") center no-repeat;
+			background-size: cover;
+			min-height: 100vh;text-align: center;
+			display: flex;align-items: center;justify-content: center;
+		}
+		*, *:before, *:after {box-sizing: inherit; }
+		.wrapper{
+			padding:20px;max-width:350px;
+			background: rgba(255,255,255,.7);
+			box-shadow: 0 0 10px 2px rgba(0,0,0,.5);
+		}
+		h2{margin:0;font-weight: 200;}
+		.plates{
+			margin:0;padding:0;text-align:left;list-style: none;
+		}
+		.plates li{
+			display:flex;padding:10px 0;font-weight: 100;
+			border-bottom:1px solid rgba(0,0,0,.2);
+		}
+		 .plates label {
+		      flex:1;
+		      cursor: pointer;
+
+		    }
+
+		 .plates input {
+		      display: none;
+		    }
+
+		.plates input + label:before {
+		      content: '⃞';
+		      margin-right: 10px;
+		    }
+
+		.plates input:checked + label:before {
+		      content: '☑';
+		    }
+
+		.add-items {
+		      margin-top: 20px;
+		    }
+
+		.add-items input {
+		      padding:10px;
+		      outline:0;
+		      border:1px solid rgba(0,0,0,0.1);
+		    }
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h2>Local Tapas</h2>
+		<p></p>
+		<ul class="plates">
+			<li>Loading Tapas...</li>
+		</ul>
+		<form class="add-items">
+			<!-- required 属性规定必需在提交之前填写输入字段。 -->
+			<input type="text" name="item" placeholder="Item Nme" required>
+			<input type="submit" value="+ Add Item">
+		</form>
+	</div>
+<script>
+	const addItems =document.querySelector('.add-items');
+	const itemsList = document.querySelector('.plates');
+	//在页面加载的时候先获取本地缓存的 items如果存在就传给变量items
+	//如果第一次登录或者没有item，就初始化为一个空数组
+	const items =JSON.parse(localStorage.getItem('item')) || [];
+
+	function addItem(e){
+		//阻止默认事件的触发，防止在提交后页面自动刷新
+		e.preventDefault();
+		const text = (this.querySelector('[name=item]')).value;
+		const item ={
+			//text,是ES6的缩写形式，即代表text: text ;
+			text,
+			done:false
+		};
+		items.push(item);
+		localStorage.setItem('items',JSON.stringify(items));
+		populateList(items, itemsList);  
+  		// 添加完数据后，重置输入框 
+  		this.reset(); 
+	}
+	
+
+	function populateList( plates = [], platesList){
+		platesList.innerHTML = plates.map((plate,i) =>{
+			return `
+				<li>
+					<input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''} />
+          				<label for="item${i}">${plate.text}</label>
+				</li>	
+			`;
+		}).join(' ');
+	}
+	function toggleDone(e) {
+    		if (!e.target.matches('input')) return; // skip this unless it's an input
+    		const el = e.target;
+    		const index = el.dataset.index;
+    		items[index].done = !items[index].done;
+    		localStorage.setItem('items', JSON.stringify(items));
+    		populateList(items, itemsList);
+  	}
+  	addItems.addEventListener('submit',addItem);
+  	itemsList.addEventListener('click', toggleDone);
+  	populateList(items, itemsList);
+
+
+ 
+</script>
+</body>
+</html>
