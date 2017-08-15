@@ -36,9 +36,9 @@ localStorage.hasOwnProperty('name');// false
 ```
 
 6) 将JSON存储在`localStorage`
->  localStorage中只能存储字符串，所以我们经常会用到
+>  localStorage中**只能存储字符串**，所以我们经常会用到
 >  JSON.stringify(Object)将一个对象转换为字符串
->  再使用JSON.parse(ObjString)将一个对象字符串转换为对象
+>  再使用JSON.parse(ObjString)将一个字符串转换为对象
 
 ```js
 let hero ={
@@ -60,4 +60,14 @@ hero = JSON.stringify(hero);
 localStorage.setItem("hero",hero);
 let newHero = localStorage.getItem('hero');
 newHero = JSON.parse(hero);
+```
+
+## `window.onbeforeunload`
+> 当窗口关闭的时候发生的事件
+
+```js
+window.onbeforeload = function(){
+    localStorage.removeItem('items');
+    e.returnValue = confirmationMessage;
+}
 ```
