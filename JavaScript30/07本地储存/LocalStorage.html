@@ -13,7 +13,7 @@
 		}
 		*, *:before, *:after {box-sizing: inherit; }
 		.wrapper{
-			padding:20px;max-width:350px;
+			padding:20px;max-width:380px;
 			background: rgba(255,255,255,.7);
 			box-shadow: 0 0 10px 2px rgba(0,0,0,.5);
 		}
@@ -45,7 +45,7 @@
 		    }
 
 		.add-items {
-		      margin-top: 20px;
+		      margin-top: 20px;display: flex;
 		    }
 
 		.add-items input {
@@ -65,6 +65,7 @@
 			<!-- required 属性规定必需在提交之前填写输入字段。 -->
 			<input type="text" name="item" placeholder="Item Nme" required>
 			<input type="submit" value="+ Add Item">
+			<input class="close" type="button" value="全部清除">
 		</form>
 	</div>
 <script>
@@ -113,7 +114,9 @@
   	itemsList.addEventListener('click', toggleDone);
   	populateList(items, itemsList);
 
-  
+  	document.querySelector('.close').onclick= () => localStorage.clear();
+
+
 
  
 </script>
