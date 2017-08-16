@@ -80,19 +80,29 @@
 		e.preventDefault();
 		const text = (this.querySelector('[name=item]')).value;
 		const item ={
-			//text,是ES6的缩写形式，即代表text: text ;
+			//text,是ES6的缩写形式，即代表text: text 
 			text,
 			done:false
 		};
-		items.push(item);
+		items.push(item);//向items里面添加对象,text(就是input框中的内容),done()
+		//给本地缓存添加属性为items值为items这个被转化成字符串的数组
+		//(数组内容是上面item对象的内容)
 		localStorage.setItem('items',JSON.stringify(items));
+		//添加items的内容到ul列表
 		populateList(items, itemsList);  
   		// 添加完数据后，重置输入框 
   		this.reset(); 
 	}
 	
-
+	//populateList方法是为了向列表中添加items内容 就是让对象实例化
+	//有两个参数 第一个是一个数组，第二个就是数组要添加到的列表
+	//为什么第一个参数是plates=[] 而不是plates ,这应该是不用在函数体内
+	//重新声明一下plates=[];需求是传入数组,而plates默认不是数组
 	function populateList( plates = [], platesList){
+		//在这个列表中添加HTML代码,这段代码就是对plates每一条内容输出的结果
+		//map() 方法创建一个新数组，其结果是调用map的这个数组的每一个元素
+		//都调用map提供的函数后返回的结果
+		//map( function callback("数组中正在处理的当前元素","正在处理的当前元素的索引"){})
 		platesList.innerHTML = plates.map((plate,i) =>{
 			return `
 				<li>
@@ -103,11 +113,15 @@
 		}).join(' ');
 	}
 	function toggleDone(e) {
+		//跳过所有的input
     		if (!e.target.matches('input')) return; // skip this unless it's an input
     		const el = e.target;
+    		//当前点击的input索引
     		const index = el.dataset.index;
     		items[index].done = !items[index].done;
+    		//设置本地缓存名字是items 值为items对象
     		localStorage.setItem('items', JSON.stringify(items));
+    		//把本地缓存的items添加到列表
     		populateList(items, itemsList);
   	}
   	addItems.addEventListener('submit',addItem);

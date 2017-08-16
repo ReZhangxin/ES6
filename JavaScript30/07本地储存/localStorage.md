@@ -2,22 +2,21 @@
 1) 清空localStorage (`clear`)
 
 ```js
-localStorage.clear();
+localStorage.clear();//清空本地缓存
 ```
 
 2) 存储数据 (`setItem`)
 
 ```js
-localStorage.setItem('name','张鑫');
-//或者是localStorage.name='张鑫';
-localStorage //Storage {name: "张鑫", length: 1}
+localStorage.setItem('key',value);
+//或者是localStorage.key=value;  value类型必须是字符串类型！
+localStorage //Storage {key: value, length: 1}
 ```
 
 3) 读取数据 (`getItem`)
 
 ```js
-localStorage.getItem('name');
-localStorage.name;
+localStorage.getItem('key');//根据参数key取得本地缓存中对应的值
 localStorage.valueOf()//读取所有数据
 localStorage.key(0) //读取第一条数据(key-value)
 ```
@@ -25,14 +24,14 @@ localStorage.key(0) //读取第一条数据(key-value)
 4) 删除某个变量 (`removeItem`)
 
 ```js
-localStorage.removeItem('name');
+localStorage.removeItem('key');//删除key所对应的那一条本地缓存
 ```
 
 5) 是否存在某个变量 (hasOwnProperty)
 
 ```js
-localStorage.hasOwnProperty('age'); // true
-localStorage.hasOwnProperty('name');// false
+localStorage.hasOwnProperty('age'); // 判断当前LocalStorage是否有"age"这条记录(不包括原型属性)
+//hasOwnProperty() 只能判断属性是否存在实例对象中不能判断是否存在原型对象中
 ```
 
 6) 将JSON存储在`localStorage`
@@ -56,18 +55,17 @@ let hero ={
 //将这个变量存储在localStorage上
 //最后获取的时候再转化为JSON  (JSON.parse())
 
-hero = JSON.stringify(hero);
-localStorage.setItem("hero",hero);
-let newHero = localStorage.getItem('hero');
-newHero = JSON.parse(hero);
+hero = JSON.stringify(hero);        //将hero转化成字符串
+localStorage.setItem("hero",hero);//localStorage只能存储字符串hero必须是字符串类型
+let newHero = localStorage.getItem('hero');//获取hero内容
+newHero = JSON.parse(hero);//将hero转化为JSON命名为新的变量newHero
 ```
 
 ## `window.onbeforeunload`
 > 当窗口关闭的时候发生的事件
 
 ```js
-window.onbeforeload = function(){
-    localStorage.removeItem('items');
-    e.returnValue = confirmationMessage;
+window.onbeforeunload = function(){
+    return "拜拜~";
 }
 ```

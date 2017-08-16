@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>localStorage</title>
+	<style>
+		html{
+			background: url("http://ouch71mj2.bkt.clouddn.com/0000-min.jpg") center no-repeat;color:white;
+			font-family: "Comic Sans MS";box-sizing: border-box;background-size: cover;min-height: 100vh;
+			display:flex;align-items: center;justify-content: center;text-align: center;
+		}
+		*, *:before, *:after {box-sizing: inherit; }
+		body{margin:0;}
+		.box{max-width: 400px;border:1px solid rgba(255,255,255,.5);
+			background: rgba(0,0,0,.5);padding:10px; 
+			box-shadow: 0 0 7px rgba(255,255,255,.5);
+		}
+		.plates{margin:0;padding:0;text-align:left;list-style: none;}
+		.plates li{display:flex;padding:10px 0;font-weight: 100;
+			border-bottom:1px solid rgba(255,255,255,.5);}
+
+
+		.addItems{margin-top: 20px;display: flex;}
+		.addItems input{ padding:10px;outline:0;border:1px solid rgba(0,0,0,0.1);}
+	</style>
+</head>
+<body>
+
+<div class="box">
+	<h3>我的任务列表</h3>
+	<ul class="plates">
+		<li>todelist...</li>
+	</ul>
+	<form class="addItems">
+		<input type="text" placeholder="添加一条任务">
+		<input type="submit" value="+ 任务">
+		<input type="button" value="清空">
+	</form>
+</div>
+
+<script>
+	const addItems = document.querySelector('.addItems');
+	const list =document.querySelector('.plates');
+	const items =JSON.prase(localStorage.getItem('items')) || [];
+
+	function addItem(e){
+		//阻止点击提交按钮刷新页面
+		e.preventDefault();
+		const text = this.querySelector('[type=text]').value;
+		item ={
+			text,
+			flag:false
+		}
+		items.push(item);
+		localStorage.setItem('items',JSON.stringify(items));
+		addlist(items,itemsList);
+		this.reset();
+		
+	}
+	function addList(plate=[],plateList){
+		plateList.innerHTML=plate.map( (plate,i)=>{
+			return `
+				<li>
+					<input type="checkbox" data-index=${i} id="item${i}" ${plate.flag ? checked : ''} >
+					<label for=“item${i}”>${plate.text}</label>
+				</li>	
+			`
+		}).join(' ')
+		
+	}
+	function toggleDone(){
+		if(!e.target.matches('input')) return ;
+		
+	}
+	addItems.addEventListener('click',addItem);
+	itemList.addEventListener('click',toggleDone)
+	
+
+</script>
+
+</body>
+</html>
