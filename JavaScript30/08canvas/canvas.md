@@ -102,7 +102,102 @@ ctx.strokeStyle = "black";
 
 ![canvas](http://otxurl2qj.bkt.clouddn.com/1502962165%281%29.png)
 
+## 绘制线段
+
+* `moveTo(x,y)`: 把线路移动到画布中的指定点，不创建线条
+* `lineTo(x,y)`: 添加一个新点，然后在画布中创建从该点到最后指定点的线条
+* 每次画线都从moveTo的点到lineTo的点
+
+### 绘制一个三角形：
+
+```js
+function draw(){
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(75,50);
+    ctx.lineTo(100,75);
+    ctx.lineTo(100,25);
+    ctx.fill();
+}
+```
+![canvas](https://mdn.mozillademos.org/files/9847/triangle.png)
+
+移动笔触
+moveTo(x,y)
+不间断一笔画成一个笑脸
+
+```js
+function draw(){
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true); // 绘制
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);   // 口(顺时针)
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);  // 左眼
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);  // 右眼
+    ctx.stroke();
+}
+```
+
+![canvas笑脸](https://mdn.mozillademos.org/files/252/Canvas_smiley.png)
+
+### 二次贝塞尔曲线及三次贝塞尔曲线
+
+`quadraticCurveTo(cp1x, cp1y, x, y)`
+绘制二次贝塞尔曲线，`cp1x`,`cp1y`为一个控制点，x,y为结束点。
+
+`bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)`
+绘制三次贝塞尔曲线，`cp1x`,`cp1y`为控制点一，`cp2x`,`cp2y`为控制点二，x,y为结束点。
+
+![cavas贝塞尔曲线](https://mdn.mozillademos.org/files/223/Canvas_curves.png)
+
+### 二次贝塞尔曲线画气泡
+
+```js
+function draw(){
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(75,25);
+    ctx.quadraticCurveTo(25,25,25,62.5);
+    ctx.quadraticCurveTo(25,100,50,100);
+    ctx.quadraticCurveTo(50,120,30,125);
+    ctx.quadraticCurveTo(60,120,65,100);
+    ctx.quadraticCurveTo(125,100,125,62.5);
+    ctx.quadraticCurveTo(125,25,75,25);
+    ctx.stroke();
+}
+```
+
+![canvas气泡](https://mdn.mozillademos.org/files/243/Canvas_quadratic.png)
+
+### 三次贝塞尔曲线画心
+
+```js
+function draw(){
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+   //三次贝塞尔曲线
+    ctx.beginPath();
+    ctx.moveTo(75,40);
+    ctx.bezierCurveTo(75,37,70,25,50,25);
+    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+    ctx.bezierCurveTo(20,80,40,102,75,120);
+    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.fill();
+}
+```
+
+![canvas心](https://mdn.mozillademos.org/files/207/Canvas_bezier.png)
+
 ## 绘制路径
+
 > 图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。
 > 一个路径，甚至一个子路径，都是闭合的。使用路径绘制图形需要一些额外的步骤。
 
@@ -114,3 +209,19 @@ ctx.strokeStyle = "black";
 > 当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。
 > 但是调用stroke()时不会自动闭合。
 
+## 线性渐变
+
+```js
+const lg = context.createLinearGradient(xOp,yOp,xEd,yEd);
+lg.addColorStop(offset,color)
+
+```
+
+* xOp:渐变开始点x坐标
+* yOp:渐变开始点y坐标
+* xEd:渐变结束点x坐标
+* yEd:渐变结束点y坐标
+* offset:设定的颜色离渐变结束点的偏移量(0~1)
+* color:绘制时要使用的颜色
+
+![canvas渐变](http://otxurl2qj.bkt.clouddn.com/canvas00.png)

@@ -16,41 +16,47 @@
 <script>
 	const canvas = document.querySelector('#box');
 	const ctx = canvas.getContext('2d');
-	ctx.width=window.innerWidth;
-	window.innerHeight=ctx.height;
-	ctx.fillStyle = "aqua";
-	ctx.strokeStyle = "black";
+	// ctx.width=window.innerWidth;
+	// window.innerHeight=ctx.height;
+	// ctx.fillStyle = "aqua";
+	// ctx.strokeStyle = "black";
 
-	ctx.shadowColor = "black";      //设置或返回用于阴影的颜色
-        	ctx.shadowBlur = 3;               //设置或返回用于阴影的模糊级别
-        	ctx.shadowOffsetX = 3;        //设置或返回阴影距形状的水平（x）距离
-        	ctx.shadowOffsetY = 3;        //设置或返回阴影距形状的垂直（y）距离
-	ctx.fillRect(100,100,200,200);
-	ctx.strokeRect(200,200,200,200);
-	ctx.clearRect(150,150,100,100);
+	// ctx.shadowColor = "black";      //设置或返回用于阴影的颜色
+    //     	ctx.shadowBlur = 3;               //设置或返回用于阴影的模糊级别
+    //     	ctx.shadowOffsetX = 3;        //设置或返回阴影距形状的水平（x）距离
+    //     	ctx.shadowOffsetY = 3;        //设置或返回阴影距形状的垂直（y）距离
+	// ctx.fillRect(100,100,200,200);
+	// ctx.strokeRect(200,200,200,200);
+	// ctx.clearRect(150,150,100,100);
 	
-	ctx.beginPath();
-	ctx.arc(600,300,150,0,Math.PI*2,false);
-	ctx.closePath();
-	ctx.fillStyle='rgba(0,255,200,.5)';
-	ctx.fill();
-
-	ctx.beginPath();
-	ctx.arc(600,400,150,Math.PI/6,(Math.PI*5)/6,false);
-	ctx.strokeStyle="pink";
+	// ctx.beginPath();
+	// ctx.arc(600,300,150,0,Math.PI*2,false);
 	// ctx.closePath();
-	ctx.stroke();
+	// ctx.fillStyle='rgba(0,255,200,.5)';
+	// ctx.fill();
 
 	// ctx.beginPath();
-	ctx.arc(400,400,150,Math.PI/6,(Math.PI*5)/6,true);
-	ctx.strokeStyle="pink";
-	// ctx.closePath();
-	ctx.stroke();
+	// ctx.arc(600,400,150,Math.PI/6,(Math.PI*5)/6,false);
+	// ctx.strokeStyle="pink";
+	// // ctx.closePath();
+	// ctx.stroke();
 
-	ctx.arc(200,400,150,Math.PI/6,(Math.PI*5)/6,false);
-	ctx.strokeStyle="pink";
-	// ctx.closePath();
-	ctx.stroke();
+	// // ctx.beginPath();
+	// ctx.arc(400,400,150,Math.PI/6,(Math.PI*5)/6,true);
+	// ctx.strokeStyle="pink";
+	// // ctx.closePath();
+	// ctx.stroke();
+
+	// ctx.arc(200,400,150,Math.PI/6,(Math.PI*5)/6,false);
+	// ctx.strokeStyle="pink";
+	// // ctx.closePath();
+	// ctx.stroke();
+
+	const g1 = ctx.createLinearGradient(0, 0, 0,300);
+	g1.addColorStop(0, 'lightgreen'); 
+	g1.addColorStop(1, 'coral');
+	ctx.fillStyle = g1;
+	ctx.fillRect(0, 0, 400, 300);
 </script>
 
 </body>

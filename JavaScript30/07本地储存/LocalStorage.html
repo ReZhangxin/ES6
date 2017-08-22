@@ -85,11 +85,16 @@
 			done:false
 		};
 		items.push(item);//向items里面添加对象,text(就是input框中的内容),done()
+	
+
+		//添加items的内容到ul列表
+		populateList(items, itemsList); 
+
 		//给本地缓存添加属性为items值为items这个被转化成字符串的数组
 		//(数组内容是上面item对象的内容)
+
 		localStorage.setItem('items',JSON.stringify(items));
-		//添加items的内容到ul列表
-		populateList(items, itemsList);  
+		
   		// 添加完数据后，重置输入框 
   		this.reset(); 
 	}
