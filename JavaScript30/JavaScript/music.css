@@ -1,0 +1,263 @@
+@font-face{
+	font-family: 'biko';
+	src: url('../fonts/biko.ttf');
+}
+@font-face{
+	font-family: '思源黑体';
+	src: url('../fonts/SYH.ttf');
+}
+html,body
+{
+ 	background: #fff5f4; 
+ 	font-family: '思源黑体';
+}
+h1,h2,h3,h4,h5,h6,p
+{
+	margin: 0;
+}
+.music-well
+{
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+nav
+{
+	width: 100%;
+	height: 50px;
+	background: -webkit-linear-gradient(left,#ff2d86,#ff414b);
+	border-radius: 8px 8px 0 0;
+}
+nav .logo
+{
+	font-size: 18px;
+	color: #fff;
+	font-family: 'biko';
+	line-height: 50px;
+	font-weight: bold;
+	padding-left: 20px;
+	float: left;
+	margin-right: 50px;
+}
+nav .found,nav .fm,nav .lib
+{
+	float: left;
+	line-height: 54px;
+	font-family: '思源黑体';
+	color: #fff;
+	vertical-align: top;
+	margin: 0 20px;
+}
+.lists
+{
+	clear: both;
+	border-bottom: 3px solid;
+	border-image: -webkit-linear-gradient(#f73397, #fb4f29) 3 3;
+	padding-bottom: 20px;
+	font-size: 0;
+}
+.lists h1
+{
+	font-size: 24px;
+	color: #3d3f3e;
+	font-family: '思源黑体';
+	margin: 30px 10px 20px;
+}
+.list
+{
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 0 10px;
+}
+.list a
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	color: #ffd3cf;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 30px 10px;
+	font-family: '思源黑体';
+}
+.list-1
+{
+    background: -webkit-linear-gradient(right top, #57bdaf , #bd2ea4); 
+}
+.list-2
+{
+    background: -webkit-linear-gradient(right top, #ec2963 , #894bc6); 
+}
+.list-3
+{
+    background: -webkit-linear-gradient(right top, #ff852f , #c0237c); 
+}
+.list-4
+{
+    background: -webkit-linear-gradient(right top, #e36a8b , #7071c4); 
+}
+.list-5
+{
+    background: -webkit-linear-gradient(right top, #f2a5af , #79a4c6); 
+}
+.contents h1
+{
+	font-size: 24px;
+	padding-left: 10px;
+	margin: 30px 0 20px;
+}
+.template-cover
+{
+	width: 200px;
+	height: 200px;
+}
+.template-cover img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.tpl-recommend
+{
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+	margin: 10px;
+	background: #fff;
+}
+.recommends
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 880px;
+}
+
+.tpl-recommend .jvc-name
+{
+	font-size: 14px;
+	line-height: 20px;
+	height: 40px;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	margin: 10px 0;
+}
+.tpl-recommend .jvc-fm
+{
+	font-size: 12px;
+	color: #999;
+	margin-bottom: 10px;
+}
+.icon-share
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 30px;
+	height: 30px;
+	background: url(../img/icon-share.png);
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+}
+.icon-like
+{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/icon-like.png);
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	vertical-align: top;
+	
+}
+.icon-comment
+{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url(../img/icon-comment.png);
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	vertical-align: top;
+	
+}
+.tpl-recommend b
+{
+	font-size: 12px;
+	color: #666;
+	line-height: 30px;
+	font-weight: normal;
+}
+.hot_recommend
+{
+	display: inline-block;
+	vertical-align: top;
+	width:320px;
+}
+.hot-cover
+{
+	display: inline-block;
+	vertical-align: top;
+	width:120px;
+	height: 120px;
+}
+.hot-cover img
+{
+	width: 100%;
+	height: 100%;
+}
+.hot-info
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 180px;
+}
+.tpl-hot
+{
+	margin-top: 10px;
+}
+.hot
+{
+	overflow: hidden;
+}
+.tpl-hot .jvc-name
+{
+	font-size: 14px;
+	line-height: 20px;
+	height: 40px;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.tpl-hot .jvc-tag
+{
+	font-size: 12px;
+	line-height: 20px;
+	height: 40px;
+	color: #999;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	margin-top: 20px;
+}
+.template
+{
+	display: none;
+}
+.music-content
+{
+	width: 1240px;
+	margin: 0 auto;
+}

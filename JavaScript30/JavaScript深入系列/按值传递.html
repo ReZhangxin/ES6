@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let value =1;
+        // function foo(value){
+        //     value = 2;
+        //     console.log(value);//2
+        // }
+        // foo(value);
+        // console.log(value);//1
+
+        let person = {
+            name: "张鑫",
+            age:22
+        };
+        function change(p){
+            p.age = 222;
+            p ={
+                name:"小鑫",
+                age:12
+            };
+            console.log(p)
+        }
+        change(person);
+        console.log(person);
+    </script>
+</body>
+</html>
