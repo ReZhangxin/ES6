@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function Point(x,y){
+            this.name = x;
+            this.age = y;
+        }
+        Point.prototype.toString = function(){
+            return console.log(`${this.name},${this.age}`);
+        }
+        var p = new Point('张鑫',22);
+
+        class Point{
+            constructor(x,y){
+                this.name = x;
+                this.age = y;
+            }
+            toString(){
+                return console.log(`${this.name},${this.age}`);
+            }
+            
+        }
+    </script>
+</body>
+</html>
