@@ -19,9 +19,9 @@
         const passed = []; 
         const secrectCode = 'love';
 
-        const input_word_pre = document.getElementsByClassName('input_eord_pre');
-        const input_word_af = document.getElementsByClassName('input_word_af');
-        const p_word = document.getElementsByClassName('p_word')
+        const input_word_pre = document.querySelector('.input_word_pre');
+        const input_word_af = document.querySelector('.input_word_af');
+        const p_word = document.querySelector('.p_word')
 
         window.addEventListener('keyup',e =>{
             const regex = new RegExp('[A-z]','gi');
