@@ -1,12 +1,16 @@
 # Symbol
 
+首先来看看`Symbol`的中文翻译：表示符号，象征，标志，记号
+**它是`JavaScript`第七种基本类型**
+前6种是`undefined`,`null`,`Boolean`,`Number`,`String`,`Object`
+
 > ES6引入`Symbol`，表示独一无二的值
 > 可以作为对象属性的标识符
 
 ## 创建一个`Symbol()`
 
 ```js
-const sym1 = Symbol();
+const s = Symbol();
 typeof s //"Symbol"
 
 ```

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{font-family: "Comic Sans MS";text-align: center;}
+    </style>
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+    键盘敲击love
+    <div style="font-size:40px;color:aqua" class="input_word_pre"></div>
+    <div style="font-size:40px;color:lightgreen" class="input_word_af"></div>
+    <p style="font-size:50px;color:coral" class="p_word"></p>
+    <script>
+        const passed = []; 
+        const secrectCode = 'love';
+
+        const input_word_pre = document.getElementsByClassName('input_eord_pre');
+        const input_word_af = document.getElementsByClassName('input_word_af');
+        const p_word = document.getElementsByClassName('p_word')
+
+        window.addEventListener('keyup',e =>{
+            const regex = new RegExp('[A-z]','gi');
+            if(e.key.length ===1 && e.key.match(regex)){
+
+                passed.push(e.key);
+                input_word_pre.innerText = passed.join('');
+                passed.splice(0,passed.length - secrectCode.length);
+                input_word_af.innerText = passed.join('');
+                if(passed.join('').includes(secrectCode)){
+                    p_word.innerHTML = `<i>i muss u</i>`;
+                    cornify_add();
+                }
+            }
+        })
+    </script>
+</body>
+</html>
