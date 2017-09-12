@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{margin:50px auto;width:200px;}
+        .on{text-decoration: line-through;font-style:italic;color:darkgrey;}
+    </style>
+</head>
+<body>
+    <ul class="box"></ul>
+
+    <script>
+        const box = document.querySelector('.box');
+
+        //createElement方式
+        // console.time();
+        // for(let i=0;i<10;i++){
+        //     const li = document.createElement('li');
+        //     li.innerHTML=`<input type="checkbox" ><label>我们的第${i+1}个</label>`
+        //    box.append(li);
+        // }
+        // console.timeEnd();
+
+        //innerHTML方式
+        console.time();
+        let _html ='';
+        for(let i=0;i<10;i++){
+            _html+= `<li><input type="checkbox" ><label>我们的第${i+1}个</label></li>`
+        }
+        box.innerHTML=_html;
+        console.timeEnd();
+
+        const list = box.querySelectorAll('li');
+        for(let i=0;i<list.length;i++){
+            list[i].firstChild.setAttribute('id',`0${i}`);
+            list[i].lastChild.setAttribute('for',`0${i}`);
+        }
+        box.addEventListener('click',function(e){
+            const ev = e || window.event;
+            const target = ev.target || ev.srcElement;
+            if(target.tagName.toLowerCase() === "input"){        
+                target.parentNode.classList.toggle('on');
+            }
+        });
+        // const box = document.querySelector('.box');
+        // const li = box.querySelectorAll('li');
+        // li.forEach( (lis,i) => {
+        //     lis.firstChild.setAttribute('id',`0${i}`);
+        //     lis.lastChild.setAttribute('for',`0${i}`);
+        //     lis.childNodes[1].addEventListener('click',function(){
+        //         lis.classList.toggle('on');
+        //     })
+        // })
+
+        // const box = document.querySelector('.box');
+        // const list = box.querySelectorAll('li');
+        // for(let i=0;i<list.length;i++){
+        //     list[i].firstChild.setAttribute('id',`0${i}`);
+        //     list[i].lastChild.setAttribute('for',`0${i}`);
+        // }
+        // box.addEventListener('click',function(e){
+        //     if(e.target.tagName.toLowerCase() === "input"){        
+        //          e.target.parentNode.classList.toggle('on');
+        //      }
+        // });
+        // for (i=0;i<list.length;i++){
+        //     list[i].addEventListener('click',function(){
+        //         this.childNodes[1].innerHTML= "checked";
+        //     })
+        // }
+    </script>
+</body>
+</html>
