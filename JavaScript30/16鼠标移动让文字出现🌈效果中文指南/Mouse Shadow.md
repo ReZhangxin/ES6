@@ -3,6 +3,7 @@
 > 鼠标移动时，元素的字体阴影跟随鼠标移动で方向发生改变
 > 达到字体阴影跟着鼠标一起走的效果
 
+<<<<<<< HEAD
 ## 解构赋值，让数据访问更加便捷
 
 > ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构（Destructuring）。
@@ -153,3 +154,6 @@ function textShadow(e){
 
 hero.addEventListener('mousemove',textShadow);
 ```
+=======
+明天加油
+>>>>>>> 85d287e11d2d85727f4f1d6b03712057848096ff
