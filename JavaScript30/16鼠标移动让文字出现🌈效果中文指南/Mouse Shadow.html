@@ -5,8 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body{font-family: "Comic Sans MS";margin:0;}
+        .hero{
+            display: flex;min-height:100vh;justify-content: center;
+            align-items: center;
+        }
+        h1{text-shadow:2px 2px 2px rgba(255,0,255,0.7),;font-size:100px;}
+    </style>
 </head>
 <body>
-    
+<div class="hero">
+    <h1 contenteditable>🔥烧起来~</h1>
+</div>
+
+<script>
+    const hero = document.querySelector('.hero');
+    const text = hero.querySelector('h1');
+    const walk = 500;//鼠标左右共移动的距离
+
+    function textShadow(e){
+       const {offsetWidth:width,offsetHeight:height} = hero;//变量width的值为hero的宽度，height的值为hero的高度
+       let {offsetX: x,offsetY:y} = e;
+       //console.log(x+"---"+y);//鼠标相对于事件源元素（srcElement）(鼠标点击的元素)的X,Y坐标
+        if(e.target !== this){
+            x = x +e.target.offsetLeft;
+            y = y +e.target.offsetTop;
+         //   console.log(`${x}===${y}`)
+        }
+        const xis = Math.floor((x/width*walk) - (walk/2));
+        const yis = Math.floor((y/height*walk)- (walk/2));
+        // console.log(`${xis}===${yis}`)
+        text.style.textShadow = `
+            ${xis}px ${yis}px 0 rgba(255,0,255,0.7),
+            ${xis * -1}px ${yis}px 0 rgba(0,255,255,0.7),
+            ${yis}px ${xis * -1}px 0 rgba(0,255,0,0.7),
+            ${yis * -1}px ${xis}px 0 rgba(0,0,255,0.7)      
+        `; // 多写几个就有了霓虹灯的效果
+    }
+
+    hero.addEventListener('mousemove',textShadow);
+</script>
 </body>
 </html>
