@@ -12,13 +12,13 @@
 
 关于正则表达式主要是如何解读搜索部分
 
-[RegExp01](http://ovbz10vsg.bkt.clouddn.com/regexp-min.png)
+![RegExp01](http://ovbz10vsg.bkt.clouddn.com/regexp-min.png)
 
-[RegExp02](http://ovbz10vsg.bkt.clouddn.com/regexp02-min.png)
+![RegExp02](http://ovbz10vsg.bkt.clouddn.com/regexp02-min.png)
 
 /^(a |an |the )/ig ^代表以什么什么开头，^(a |an |the )代表以a或者an或者the开头，i代表不区分大小写，g代表整个字符串全局搜索。
 
-### replace
+### `replace`
 
 ```js
 var re = /apples/gi;
@@ -29,7 +29,7 @@ var newstr = str.replace(re, "oranges");
 console.log(newstr);
 ```
 
-### sort
+### `sort`
 
 > 该方法在适当的位置对数组的元素进行排序，并返回数组。
 
