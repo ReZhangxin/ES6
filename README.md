@@ -12,9 +12,9 @@
 
 [第六章 Symbol和Symbol属性]()
 
-[第七章 Set和Map集合]()
+[第七章 Set和Map集合](https://github.com/ReZhangxin/ES6/issues/3)
 
-[第八章 迭代器(Iterator)和生成器(Generator)]()
+[第八章 迭代器(Iterator)和生成器(Generator)](https://github.com/ReZhangxin/ES6/issues/2)
 
 [第九章 JavaScript中的类]()
 
