@@ -67,7 +67,7 @@ npm install --save-dev babel-preset-es2015 babel-cli
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": { //多增加的
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
   }
