@@ -67,12 +67,11 @@ npm install --save-dev babel-preset-es2015 babel-cli
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
   }
 }
-
 ```
 
 这里说一下`--save-dev`和`--save`之间的区别：
