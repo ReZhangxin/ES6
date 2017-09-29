@@ -135,5 +135,11 @@ Generator函数特征
 - 函数体内部使用yield表达式，定义不同的内部状态
 
 ```js
-
+function *hello(){
+    yield 'zhang';
+    yield 'xin';
+    return 'ending';
+}
+const ge = hello();
+ge.next();
 ```
