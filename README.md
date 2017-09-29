@@ -127,24 +127,24 @@ npm install --save-dev babel-preset-es2015 babel-cli
 
 [第二章 字符串和正则表达式](https://github.com/ReZhangxin/ES6/blob/master/ES6/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
 
-[第三章 函数]()
+<del>[第三章 函数]()</del>
 
-[第四章 扩展对象的功能性]()
+<del>[第四章 扩展对象的功能性]()</del>
 
-[第五章 解构:是数据访问更便捷]()
+<del>[第五章 解构:是数据访问更便捷]()</del>
 
-[第六章 Symbol和Symbol属性]()
+<del>[第六章 Symbol和Symbol属性]()</del>
 
 [第七章 Set和Map集合](https://github.com/ReZhangxin/ES6/issues/3)
 
 [第八章 迭代器(Iterator)和生成器(Generator)](https://github.com/ReZhangxin/ES6/blob/master/ES6/Iterator.md)
 
-[第九章 JavaScript中的类]()
+<del>[第九章 JavaScript中的类]()</del>
 
-[第十章 改进数组的功能]()
+<del>[第十章 改进数组的功能]()</del>
 
-[第十一章 Promise与异步编程]()
+<del>[第十一章 Promise与异步编程]()</del>
 
 [第十二章 代理(Proxy)和反射(Reflection)API]()
 
-[第十三章 用模块封装代码]()
+<del>[第十三章 用模块封装代码]()</del>
