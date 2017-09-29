@@ -137,7 +137,7 @@ npm install --save-dev babel-preset-es2015 babel-cli
 
 [第七章 Set和Map集合](https://github.com/ReZhangxin/ES6/issues/3)
 
-[第八章 迭代器(Iterator)和生成器(Generator)](https://github.com/ReZhangxin/ES6/issues/2)
+[第八章 迭代器(Iterator)和生成器(Generator)](https://github.com/ReZhangxin/ES6/blob/master/ES6/Iterator.md)
 
 [第九章 JavaScript中的类]()
 
