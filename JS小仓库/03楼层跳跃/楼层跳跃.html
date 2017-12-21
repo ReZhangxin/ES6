@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    html {height: 100%;}
+    li {list-style: none;}
+    ol {
+      position: fixed;
+      top: 200px;
+      left: 50px;
+      width: 5em;
+      border: 1px solid #ddd;
+    }
+    ol li {
+      width: 100%;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+    }
+    ul {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    ul li {
+      height: 100%;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>第一层</li>
+    <li>第二层</li>
+    <li>第三层</li>
+    <li>第四层</li>
+    <li>第五层</li>
+  </ul>
+  <ol>
+    <li>第一层</li>
+    <li>第二层</li>
+    <li>第三层</li>
+    <li>第四层</li>
+    <li>第五层</li>
+  </ol>
+
+  <script>
+    const ul = document.getElementsByTagName('ul')[0]
+    const ulList = ul.children
+    const ol = document.getElementsByTagName('ol')[0]
+    const olList = ol.children
+    let timer = null
+    let leader = 0
+    let target = 0
+    window.onscroll = function () {
+      leader = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop 
+    }
+    const color = ['lightblue', 'lightcoral', 'lightgreen', 'teal', 'coral']
+    for (let i = 0; i <color.length; i++){
+      ulList[i].style.background = color[i]
+      olList[i].style.background = color[i]
+      olList[i].index = i
+      olList[i].onclick = function () {
+        target = ulList[this.index].offsetTop
+        clearInterval(timer)
+        timer = setInterval(function(){
+          let step = (target - leader) /10
+          step = step > 0 ? Math.ceil(step) : Math.floor(step)
+          leader += step
+          window.scrollTo(0,leader)
+          if(Math.abs(target - leader) <= Math.abs(step)){
+            window.scrollTo(0,target)
+            clearInterval(timer)
+          }
+        },1000/60)
+      }
+    }
+  </script>
+</body>
+</html>
