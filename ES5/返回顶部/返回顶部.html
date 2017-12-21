@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      height: 2000px;
+    }
+    .box{
+      position: fixed;
+      display: none;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: coral;
+      line-height: 100px;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    返回顶部~
+  </div>
+  <script>
+    const box = document.getElementsByClassName('box')[0]
+    let timer = null
+    let target = 0
+    let leader = 0
+    window.onscroll = function () {
+      const top = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop 
+      if (top> 300) {
+        show(box)
+      }else {
+        hide(box)
+      }
+      leader = top
+    }
+    box.addEventListener('click',function(){
+      clearInterval(timer)
+      timer = setInterval(function(){
+        let step = (target - leader) /10
+        step = step > 0 ? Math.ceil(step) : Math.floor(step)
+        leader += step
+        window.scrollTo(0,leader)
+        if(Math.abs(target - leader) <= Math.abs(step)){
+          window.scrollTo(0,target)
+          clearInterval(timer)
+        }
+      },1000/60)
+    })
+    function show (el) {
+      return el.style.display = 'block'
+    }
+    function hide (el) {
+      return el.style.display = 'none'
+    }
+  </script>
+</body>
+</html>
